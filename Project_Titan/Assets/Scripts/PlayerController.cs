@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Transform camera;
+
+    [Header("Objects")]
+    public Transform camera1;
     public Rigidbody rb;
 
+    [Header("Personal Settings")]
     public float horizontalSensitivity = 5;
     public float verticalSensitivity = 5;
+    public KeyCode JumpKeyCode = KeyCode.Space;
+    public KeyCode SprintKeyCode = KeyCode.LeftShift;
+
+    [Header("Camera Settings")]
     public float cameraMaximumY = 90f;
     public float cameraMinimumY = -90f;
     public float rotationSmoothSpeed = 10f;
 
+    [Header("Game Settings")]
     public float walkSpeed = 9f;
     public float runSpeed = 14f;
     public float maxSpeed = 20f;
     public float jumpPower = 30f;
-
     public float extraGravity = 45;
+
+    [Header("Game Information")]
+    public bool grounded;
+
 
     float bodyRotationX;
     float camRotationY;
@@ -26,13 +37,13 @@ public class PlayerController : MonoBehaviour
     Vector3 directionIntentY;
     float speed;
 
-    public bool grounded;
+
 
     void Update()
     {
         LookRotation();
         Movement();
-        if (grounded && Input.GetButtonDown("Jump"))
+        if (grounded && Input.GetKeyDown(JumpKeyCode))
         {
             Jump();
 
@@ -65,27 +76,27 @@ public class PlayerController : MonoBehaviour
         //handle rotations
         transform.rotation = Quaternion.Lerp(transform.rotation, bodyTargetRotation, Time.deltaTime * rotationSmoothSpeed);
 
-        camera.localRotation = Quaternion.Lerp(camera.localRotation, camTargetRotation, Time.deltaTime * rotationSmoothSpeed);
+        camera1.localRotation = Quaternion.Lerp(camera1.localRotation, camTargetRotation, Time.deltaTime * rotationSmoothSpeed);
     }
 
     void Movement()
     {
-        directionIntentX = camera.right;
+        directionIntentX = camera1.right;
         directionIntentX.y = 0;
         directionIntentX.Normalize();
 
-        directionIntentY = camera.forward;
+        directionIntentY = camera1.forward;
         directionIntentY.y = 0;
         directionIntentY.Normalize();
 
         rb.velocity = directionIntentY * Input.GetAxis("Vertical") * speed + directionIntentX * Input.GetAxis("Horizontal") * speed + Vector3.up * rb.velocity.y;
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(SprintKeyCode))
         {
             speed = runSpeed;
         }
-        if (!Input.GetKey(KeyCode.LeftShift))
+        if (!Input.GetKey(SprintKeyCode))
         {
             speed = walkSpeed;
         }

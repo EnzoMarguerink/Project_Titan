@@ -224,10 +224,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e62d28da97a8e8c40b6ab75e57e9cf80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 643721171053229095}
+  camera1: {fileID: 643721171053229095}
   rb: {fileID: 643721171990776386}
   horizontalSensitivity: 5
   verticalSensitivity: 5
+  JumpKeyCode: 32
+  SprintKeyCode: 304
   cameraMaximumY: 90
   cameraMinimumY: -90
   rotationSmoothSpeed: 20
