@@ -32,12 +32,18 @@ public class PlayerController : MonoBehaviour
     {
         LookRotation();
         Movement();
-        ExtraGravity();
-        GroundCheck();
         if (grounded && Input.GetButtonDown("Jump"))
         {
             Jump();
+
         }
+    }
+    void FixedUpdate()
+    {
+        ExtraGravity();
+
+        GroundCheck();
+ 
     }
 
     void LookRotation()
@@ -98,7 +104,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+       rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
 
     }
 
