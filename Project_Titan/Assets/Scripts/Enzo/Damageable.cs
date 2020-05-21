@@ -29,33 +29,25 @@ public class Damageable : MonoBehaviour
 
     #region GetFunctions
 
-    /// <summary>
     /// Returns The current health
-    /// </summary>
     public float GetHealth()
     {
         return health;
     }
 
-    /// <summary>
     /// Returns The current armor
-    /// </summary>
     public float GetArmor()
     {
         return armorHealth;
     }
 
-    /// <summary>
     /// Returns The Max Health
-    /// </summary>
     public float GetMaxHealth()
     {
         return maxHealth;
     }
 
-    /// <summary>
     /// Returns The Max Armor
-    /// </summary>
     public float GetMaxArmor()
     {
         return maxArmorHealth;
@@ -65,9 +57,7 @@ public class Damageable : MonoBehaviour
 
     #region DoFunctions
 
-    /// <summary>
     /// Removes Health
-    /// </summary>
     public void DoDamage(float damage, string removedBy)
     {
         if (!invincible)
@@ -97,18 +87,14 @@ public class Damageable : MonoBehaviour
         }
     }
 
-    /// <summary>
     /// Does the damage over the time
-    /// </summary>
     public void DoDamage(float damage, float overTime, string removedBy)
     {
         // Zorgt dat je een noramale void kan roepen inplaats van start Courutine
         StartCoroutine(IDoDamage(damage, overTime, removedBy));
     }
 
-    /// <summary>
     ///  Does the damage over the time
-    /// </summary>
     private IEnumerator IDoDamage(float damage, float overTime, string removedBy)
     {
         float timer = 0;
@@ -127,54 +113,38 @@ public class Damageable : MonoBehaviour
 
     #endregion
 
-
     #region AddFunctions
-
-    /// <summary>
     /// Returns The current health
-    /// </summary>
     public void AddHealth(float _health)
     {
         health += _health;
         health = Mathf.Clamp(health, 0, maxHealth);
     }
 
-    /// <summary>
     /// Returns The current armor
-    /// </summary>
     public void AddArmorHealth(float _armorHealth)
     {
         armorHealth += _armorHealth;
         armorHealth = Mathf.Clamp(armorHealth, 0, maxArmorHealth);
     }
-
     #endregion
 
-
     #region OnFuncitons
-    /// <summary>
+    
     /// Is Called When health Is 0 or lower with a name
-    /// </summary>
+    
     protected virtual void OnDeath(string diedBy)
     {
         Debug.Log("RIP");
     }
    
-
-    /// <summary>
     /// Is Called When health Is 0 or lower
-    /// </summary>
     protected virtual void OnDeath() { }
 
-    /// <summary>
     /// Is Called When Health Is Removed
-    /// </summary>
     protected virtual void OnHealthLost(float healthLost, string hitBy) { }
 
-    /// <summary>
     /// Is Called When Health Is Removed
-    /// </summary>
     protected virtual void OnArmorHealthLost(float armorHealthLost) { }
-
     #endregion
 }
