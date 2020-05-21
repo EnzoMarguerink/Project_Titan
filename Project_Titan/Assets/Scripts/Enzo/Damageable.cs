@@ -155,7 +155,11 @@ public class Damageable : MonoBehaviour
     /// <summary>
     /// Is Called When health Is 0 or lower with a name
     /// </summary>
-    protected virtual void OnDeath(string diedBy) { }
+    protected virtual void OnDeath(string diedBy)
+    {
+        Debug.Log("RIP");
+    }
+   
 
     /// <summary>
     /// Is Called When health Is 0 or lower
