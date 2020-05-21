@@ -82,8 +82,8 @@ public class PlayerController : MonoBehaviour
 
     void LookRotation()
     {
-      //  Cursor.visible = false;
-      //  Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
         //Camera en Body rotation waardes
         bodyRotationX += Input.GetAxis("Mouse X") * horizontalSensitivity;

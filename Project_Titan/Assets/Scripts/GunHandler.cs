@@ -25,9 +25,9 @@ public class GunHandler : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast (cam.transform.position, cam.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
+     
 
-            PlayerController target = hit.transform.GetComponent<PlayerController>();
+            Dummy target = hit.transform.GetComponent<Dummy>();
             if(target != null)
             {
                 target.TakeDamage(damage); 
