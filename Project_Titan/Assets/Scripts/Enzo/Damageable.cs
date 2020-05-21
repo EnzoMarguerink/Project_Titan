@@ -22,6 +22,10 @@ public class Damageable : MonoBehaviour
         died = false;
     }
 
+    private void Update()
+    {
+    }
+
 
     #region GetFunctions
 
@@ -58,7 +62,6 @@ public class Damageable : MonoBehaviour
     }
 
     #endregion
-
 
     #region DoFunctions
 

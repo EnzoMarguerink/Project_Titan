@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [Header("Objects")]
     public Transform camera1;
     public Rigidbody rb;
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI armorText;
 
     [Header("Personal Settings")]
     public float horizontalSensitivity = 5;
@@ -20,12 +24,19 @@ public class PlayerController : MonoBehaviour
     public float cameraMinimumY = -90f;
     public float rotationSmoothSpeed = 10f;
 
-    [Header("Game Settings")]
+    [Header("Movement Settings")]
     public float walkSpeed = 9f;
     public float runSpeed = 14f;
     public float maxSpeed = 20f;
     public float jumpPower = 30f;
     public float extraGravity = 45;
+
+    [Header("Health Settings")]
+    public int maxHealth = 100;
+    public int curHealth;
+    public int staArmor = 50;
+    public int curArmor;
+    public bool Godmode = false;
 
     [Header("Game Information")]
     public bool grounded;
@@ -38,6 +49,13 @@ public class PlayerController : MonoBehaviour
     float speed;
 
 
+    void Awake()
+    {
+        curHealth = maxHealth;
+        healthText.text = curHealth.ToString();
+        curArmor = staArmor;
+        armorText.text = curArmor.ToString();
+    }
 
     void Update()
     {
@@ -48,6 +66,9 @@ public class PlayerController : MonoBehaviour
             Jump();
 
         }
+        HealthCheck();
+        
+
     }
     void FixedUpdate()
     {
@@ -57,10 +78,12 @@ public class PlayerController : MonoBehaviour
  
     }
 
+    #region Look & Rotation
+
     void LookRotation()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+      //  Cursor.visible = false;
+      //  Cursor.lockState = CursorLockMode.Locked;
 
         //Camera en Body rotation waardes
         bodyRotationX += Input.GetAxis("Mouse X") * horizontalSensitivity;
@@ -78,6 +101,10 @@ public class PlayerController : MonoBehaviour
 
         camera1.localRotation = Quaternion.Lerp(camera1.localRotation, camTargetRotation, Time.deltaTime * rotationSmoothSpeed);
     }
+
+    #endregion
+
+    #region Movement
 
     void Movement()
     {
@@ -118,5 +145,57 @@ public class PlayerController : MonoBehaviour
        rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
 
     }
+
+    #endregion
+
+
+    #region Damage & Health
+
+    void HealthCheck()
+    {
+        healthText.text = curHealth.ToString();
+        armorText.text = curArmor.ToString();
+    }
+
+    public void TakeDamage (int damageTotal)
+    {
+        if (!Godmode)
+        {
+            
+
+            if (curArmor > 0)
+            {
+                var armorDamage = Mathf.Min(damageTotal, curArmor);
+                curArmor -= armorDamage;
+                damageTotal -= armorDamage;
+            }
+
+            if (damageTotal > 0)
+            {
+                curHealth -= damageTotal;
+            }
+
+            if (curHealth <= 0)
+            {
+                Debug.Log("Died");
+            }
+
+
+        }
+    }
+
+    public void addHealth (int healTotal)
+    {
+        curHealth += healTotal;
+        curHealth = Mathf.Clamp(curHealth, 0, maxHealth);
+    }
+
+    public void addArmor(int armoraddTotal)
+    {
+        curArmor += armoraddTotal;
+        curArmor = Mathf.Clamp(curArmor, 0, staArmor);
+    }
+
+    #endregion
 
 }
