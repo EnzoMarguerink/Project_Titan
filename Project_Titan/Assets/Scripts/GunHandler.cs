@@ -2,8 +2,8 @@
 
 public class GunHandler : MonoBehaviour
 {
-    public float damage = 10f;
-    public float range = 100f;
+    public int damage = 10;
+    public int range = 100;
     public float fireRate = 15f;
 
     public Camera cam;
@@ -27,10 +27,10 @@ public class GunHandler : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
-            Damageable target = hit.transform.GetComponent<Damageable>();
+            PlayerController target = hit.transform.GetComponent<PlayerController>();
             if(target != null)
             {
-                target.DoDamage(damage, null ); 
+                target.TakeDamage(damage); 
             }
         }
     }
