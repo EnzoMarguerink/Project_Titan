@@ -23,10 +23,11 @@ public class GunHandler : MonoBehaviour
 
     void Shoot()
     {
+        fire.Play();
         RaycastHit hit;
         if (Physics.Raycast (cam.transform.position, cam.transform.forward, out hit, range))
         {
-            fire.Play();
+            
 
             if (hit.transform.tag == "Envoirement")
             {
