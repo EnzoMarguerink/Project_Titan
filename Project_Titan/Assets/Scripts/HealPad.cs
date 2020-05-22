@@ -10,7 +10,7 @@ public class HealPad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //debug.log("yeet");
     }
 
     void OnTriggerEnter(Collider col)
