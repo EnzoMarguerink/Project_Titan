@@ -6,6 +6,8 @@ public class Grenade : MonoBehaviour
 {
 
     public float delay = 3f;
+    public float blastRadius = 5f;
+    public float explodeForce = 750f;
 
     public GameObject ExplodeEffect;
 
@@ -33,7 +35,18 @@ public class Grenade : MonoBehaviour
     {
         Instantiate(ExplodeEffect, transform.position, transform.rotation);
 
+        Collider[] colliders = Physics.OverlapSphere(transform.position, blastRadius);
+
+        foreach (Collider nearbyObject in colliders)
+        {
+           Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.AddExplosionForce(explodeForce, transform.position, blastRadius);
+            }
+        }
+
         Destroy(gameObject);
-        Debug.Log("Boem");
+        //Debug.Log("Boem");
     }
 }
