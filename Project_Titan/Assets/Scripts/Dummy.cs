@@ -24,6 +24,10 @@ public class Dummy : MonoBehaviour
     void Update()
     {
         healthText.text = curHealth.ToString();
+
+        healthText.transform.LookAt(Camera.main.transform.position);
+        healthText.transform.Rotate(0, 180, 0);
+
     }
 
     public void TakeDamage(int damageTotal)
