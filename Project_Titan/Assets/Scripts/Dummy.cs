@@ -25,7 +25,7 @@ public class Dummy : MonoBehaviour
     {
         healthText.text = curHealth.ToString();
 
-        healthText.transform.LookAt(Camera.main.transform.position);
+        healthText.transform.LookAt(Camera.current.transform.position);
         healthText.transform.Rotate(0, 180, 0);
 
     }
