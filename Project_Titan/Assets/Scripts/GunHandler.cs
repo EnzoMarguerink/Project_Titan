@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GunHandler : MonoBehaviour
 {
@@ -19,11 +20,18 @@ public class GunHandler : MonoBehaviour
 
     public Animator animator;
 
+    public Text reloadCount;
+
     void Start()
     {
         currentAmmo = maxAmmo;
     }
 
+    void OnEnable()
+    {
+        isReloading = false;
+        animator.SetBool("reloading", false);
+    }
 
     void Update()
     {
@@ -31,7 +39,12 @@ public class GunHandler : MonoBehaviour
         if (isReloading)
             return;
 
-        if(currentAmmo <= 0)
+        if(currentAmmo <= 0 )
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.R) && currentAmmo != maxAmmo)
         {
             StartCoroutine(Reload());
             return;
@@ -42,6 +55,8 @@ public class GunHandler : MonoBehaviour
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
+
+        reloadCount.text = currentAmmo.ToString();
     }
 
     void Shoot()
