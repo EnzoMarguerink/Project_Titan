@@ -34,6 +34,6 @@ public class Grenade : MonoBehaviour
         Instantiate(ExplodeEffect, transform.position, transform.rotation);
 
         Destroy(gameObject);
-        //Debug.Log("Boem");
+        Debug.Log("Boem");
     }
 }
