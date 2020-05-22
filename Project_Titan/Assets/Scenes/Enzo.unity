@@ -1729,7 +1729,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5096
+  m_Name: pb_Mesh14710
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14138,7 +14138,7 @@ PrefabInstance:
     - target: {fileID: 1508310309576606994, guid: c45e3dc4fec8df743b60f1fc28e0d37c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 38.079823
+      value: 38.81
       objectReference: {fileID: 0}
     - target: {fileID: 1508310309576606994, guid: c45e3dc4fec8df743b60f1fc28e0d37c,
         type: 3}
@@ -16313,7 +16313,6 @@ MonoBehaviour:
   jumpPower: 30
   extraGravity: 45
   maxHealth: 100
-  curHealth: 0
   staArmor: 50
   curArmor: 0
   Godmode: 0
