@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Health Settings")]
     public int maxHealth = 100;
-    public int curHealth;
+    public static float curHealth;
     public int staArmor = 50;
     public int curArmor;
     public bool Godmode = false;
@@ -52,9 +52,9 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         curHealth = maxHealth;
-        healthText.text = curHealth.ToString();
+        healthText.text = curHealth.ToString("F0");
         curArmor = staArmor;
-        armorText.text = curArmor.ToString();
+        armorText.text = curArmor.ToString("F0");
     }
 
     void Update()
@@ -82,8 +82,8 @@ public class PlayerController : MonoBehaviour
 
     void LookRotation()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.visible = false;
+        // Cursor.lockState = CursorLockMode.Locked;
 
         //Camera en Body rotation waardes
         bodyRotationX += Input.GetAxis("Mouse X") * horizontalSensitivity;
@@ -153,8 +153,8 @@ public class PlayerController : MonoBehaviour
 
     void HealthCheck()
     {
-        healthText.text = curHealth.ToString();
-        armorText.text = curArmor.ToString();
+        healthText.text = curHealth.ToString("F0");
+        armorText.text = curArmor.ToString("F0");
     }
 
     public void TakeDamage (int damageTotal)
