@@ -4,6 +4,12 @@ using UnityEngine.UI;
 
 public class GunHandler : MonoBehaviour
 {
+
+    public KeyCode ShootKeyCode = KeyCode.Mouse0;
+    public KeyCode ReloadKeyCode = KeyCode.R;
+
+    public GameObject bulletHole;
+
     public int damage = 10;
     public int range = 100;
     public float fireRate = 15f;
@@ -44,13 +50,13 @@ public class GunHandler : MonoBehaviour
             StartCoroutine(Reload());
             return;
         }
-        if (Input.GetKeyDown(KeyCode.R) && currentAmmo != maxAmmo)
+        if (Input.GetKeyDown(ReloadKeyCode) && currentAmmo != maxAmmo)
         {
             StartCoroutine(Reload());
             return;
         }
 
-        if (Input.GetButton ("Fire1") && Time.time >= nextTimeToFire)
+        if (Input.GetKey(ShootKeyCode) && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
@@ -71,8 +77,8 @@ public class GunHandler : MonoBehaviour
             
 
             if (hit.transform.tag == "Envoirement")
-            {
-
+            { 
+                Instantiate(bulletHole, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
             }
 
             Dummy target = hit.transform.GetComponent<Dummy>();
