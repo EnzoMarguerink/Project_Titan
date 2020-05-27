@@ -1,12 +1,30 @@
 fileFormatVersion: 2
 guid: 3e66bb4fd341de64a8bdd6a38a8a4be0
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3486734071266917391
+    second: Bullet Hole 1
+  - first:
+      213: 2213348934228247984
+    second: Bullet Hole 2
+  - first:
+      213: -652864349883619297
+    second: Bullet Hole 3
+  - first:
+      213: -5533699332085146507
+    second: Bullet Hole 4
+  - first:
+      213: -8092756192971741862
+    second: Bullet HOle 5
+  - first:
+      213: -4158352631766914846
+    second: Bullet Hole 6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -97,11 +115,137 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Bullet Hole 1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 166
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f342efe5d1ac9fc0800000000000000
+      internalID: -3486734071266917391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Hole 2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 260
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b50aacf02567be10800000000000000
+      internalID: 2213348934228247984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Hole 3
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 263
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f18aba2355f80f6f0800000000000000
+      internalID: -652864349883619297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Hole 4
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 141
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c9f39b6c95433b0800000000000000
+      internalID: -5533699332085146507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet HOle 5
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 127
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55a318ae11c0bf80800000000000000
+      internalID: -8092756192971741862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Hole 6
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 221
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e8e8b430509a46c0800000000000000
+      internalID: -4158352631766914846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 522cc03b25718c8479cc3445405fc8ce
     internalID: 0
     vertices: []
     indices: 

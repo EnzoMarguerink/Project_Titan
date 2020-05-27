@@ -128,80 +128,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 397767550, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 397767550, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 397767550, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 397767550, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 397767550, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 525530571, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 733317982, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1926084875, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2004980208, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2004980209, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2004980212, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2004980212, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2004980212, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 311691083}
-    - target: {fileID: 2004980212, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 643721171053229112, guid: b586900ad8344334fbf97ef496e94bbd,
-        type: 3}
-      propertyPath: m_TagString
-      value: MainCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 643721171990776387, guid: b586900ad8344334fbf97ef496e94bbd,
-        type: 3}
-      propertyPath: rotationSmoothSpeed
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 643721171990776388, guid: b586900ad8344334fbf97ef496e94bbd,
         type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 643721171990776388, guid: b586900ad8344334fbf97ef496e94bbd,
-        type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 643721171990776398, guid: b586900ad8344334fbf97ef496e94bbd,
@@ -259,39 +188,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1185091362670042460, guid: b586900ad8344334fbf97ef496e94bbd,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1185091362670042460, guid: b586900ad8344334fbf97ef496e94bbd,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1185091362670042460, guid: b586900ad8344334fbf97ef496e94bbd,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1185091362670042460, guid: b586900ad8344334fbf97ef496e94bbd,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1185091362670042460, guid: b586900ad8344334fbf97ef496e94bbd,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b586900ad8344334fbf97ef496e94bbd, type: 3}
---- !u!20 &311691083 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 643721171053229093, guid: b586900ad8344334fbf97ef496e94bbd,
-    type: 3}
-  m_PrefabInstance: {fileID: 288690938}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &428403491
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,7 +633,7 @@ GameObject:
   - component: {fileID: 1068505221}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Envoirement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1409,7 +1307,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14376
+  m_Name: pb_Mesh16848
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
