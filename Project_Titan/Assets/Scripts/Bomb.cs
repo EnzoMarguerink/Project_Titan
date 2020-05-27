@@ -11,7 +11,7 @@ public class Bomb : MonoBehaviour
 
     void playerCollision()
     {
-        if (player.transform.position = )
+      
     }
 
     private void OnDrawGizmos()

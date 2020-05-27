@@ -12,12 +12,15 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI armorText;
+    public TextMeshProUGUI bombText;
+    public TextMeshProUGUI bombcountdownText;
 
     [Header("Personal Settings")]
     public float horizontalSensitivity = 5;
     public float verticalSensitivity = 5;
     public KeyCode JumpKeyCode = KeyCode.Space;
     public KeyCode SprintKeyCode = KeyCode.LeftShift;
+    public KeyCode PlantKeyCode = KeyCode.E;
 
     [Header("Camera Settings")]
     public float cameraMaximumY = 90f;
@@ -48,13 +51,13 @@ public class PlayerController : MonoBehaviour
     Vector3 directionIntentY;
     float speed;
 
-
     void Awake()
     {
         curHealth = maxHealth;
         healthText.text = curHealth.ToString("F0");
         curArmor = staArmor;
         armorText.text = curArmor.ToString("F0");
+        bombcountdownText.gameObject.SetActive(false);
     }
 
     void Update()

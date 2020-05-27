@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Envoirement
   - bombsight
+  - WeaponHolder
   layers:
   - Default
   - TransparentFX
